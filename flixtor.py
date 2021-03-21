@@ -2,7 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
-import pync
+# import pync
+from notifypy import Notify
+
 
 chrome_options = Options()
 # Chrome v75 and lower:
@@ -20,7 +22,10 @@ time.sleep(5)
 while True:
     print(driver.find_element_by_xpath('/html/body/div[3]/div[1]/span').text)
     if driver.find_element_by_xpath('/html/body/div[3]/div[1]/span').text == 'Welcome to Flixtor':
-        pync.notify("You can access Flixtor now")
+        notification = Notify()
+        notification.title = "FlixTor"
+        notification.message = "You can access FlixTor now"
+        notification.send()
         break
     driver.refresh()
     time.sleep(20)
