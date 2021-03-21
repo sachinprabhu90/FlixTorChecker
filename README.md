@@ -1,8 +1,8 @@
 # FlixTorChecker
 
 ## Requirements
--- selenium
--- pync
+selenium
+pync
 
 ## Description
 Checks if flixtor's servers are ready to service non-premium members.
